@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./public/css/materialize.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/navbar.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include('blocks/navbar'); %>
+
+    <div class="container">
+        <h1>About</h1>
+        <p>Site for testing your heart health.</p>
+        <blockquote>The web-site was created for educational purposes</blockquote>
+        <p>This site was created using next web-tools.</p>
+
+        <div class="row">
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <a href="https://materializecss.com/" target="_blank" rel="noopener noreferrer"><img width="280"
+                                height="200" src="public/img/materialize.png"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <a href="https://expressjs.com/" target="_blank" rel="noopener noreferrer"><img width="280"
+                                height="200" src="public/img/express_2.png"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <a href="https://nodejs.org/" target="_blank" rel="noopener noreferrer"><img width="280"
+                                height="200" src="public/img/node.png"></a>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <a href="https://www.kaggle.com/" target="_blank" rel="noopener noreferrer"><img width="280"
+                                height="200" src="public/img/kaggle.png"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <a href="https://www.machinelearnjs.com/" target="_blank" rel="noopener noreferrer"><img
+                                width="280" height="200" src="public/img/machinelearn_2.png"></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l4">
+                <div class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <a href="https://www.chartjs.org/" target="_blank" rel="noopener noreferrer"><img width="280"
+                                height="200" src="public/img/chartjs.png"></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="divider"></div>
+        <section class="section">
+            <h4>The Data</h4>
+            <p>The dataset used in this system is the Cleveland Heart Disease dataset taken from the UCI repository.</p>
+            <table class="striped centered responsive-table">
+                <thead>
+                    <tr>
+                        <% dataKeys.forEach(key => { %>
+                        <th><%= key %></th>
+                        <% }) %>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <% data.forEach( obj => { %>
+                    <tr>
+                        <% dataKeys.forEach( key => {%>
+                        <td> <%= obj[key] %> </td>
+                        <% }) %>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+
+            <p>The dataset consists of 303 individuals data. There are 14 columns in the dataset, which are described
+                below.</p>
+            <ol>
+                <li><b>Age</b> : displays the age of the individual.</li>
+                <li>
+                    <dl>
+                        <dt><b>Sex</b> : displays the gender of the individual using the following format :</dt>
+                        <dd>1 = male</dd>
+                        <dd>0 = female</dd>
+                    </dl>
+                </li>
+
+                <li>
+                    <dl>
+                        <dt><b>Chest-pain type</b> : displays the type of chest-pain experienced by the individual using the
+                            following
+                            format :</dt>
+                        <dd>1 = typical angina</dd>
+                        <dd>2 = atypical angina</dd>
+                        <dd>3 = non — anginal pain</dd>
+                        <dd>4 = asymptotic</dd>
+                    </dl>
+                </li>
+
+                <li><b>Resting Blood Pressure</b> : displays the resting blood pressure value of an individual in mmHg (unit)</li>
+                <li><b>Serum Cholestrol</b> : displays the serum cholestrol in mg/dl (unit)</li>
+                <li><b>Fasting Blood Sugar</b> : compares the fasting blood sugar value of an individual with 120mg/dl.
+                
+                    <dl>
+                        <dt>If fasting blood sugar > 120mg/dl then :</dt>
+                        <dd>1 (true)</dd>
+                        <dd>else : 0 (false)</dd>
+                    </dl>
+                </li>
+                
+                <li>
+                    <dl>
+                        <dt><b>Resting ECG</b> : displays resting electrocardiographic results</dt>
+                        <dd>0 = normal</dd>
+                        <dd>1 = having ST-T wave abnormality</dd>
+                        <dd>2 = left ventricular hyperthrophy</dd>
+                    </dl>
+                </li>
+                
+                <li><b>Max heart rate achieved</b> : displays the max heart rate achieved by an individual.</li>
+                
+
+                <li><dl>
+                    <dt><b>Exercise induced angina</b> :</dt>
+                    <dd>1 = yes</dd>
+                    <dd>0 = no</dd>
+                </dl>
+                </li>
+                 
+                <li><b>ST depression induced by exercise relative to rest</b> : displays the value which is integer or float.</li>
+                
+                <li>
+                    <dl>
+                        <dt><b>Peak exercise ST segment</b> :</dt>
+                        <dd>1 = upsloping</dd>
+                        <dd>2 = flat</dd>
+                        <dd>3 = downsloping</dd>
+                    </dl>
+                </li>
+                
+                <li><b>Number of major vessels (0–3) colored by flourosopy</b> : displays the value as integer or float.</li>
+                
+                <li>
+                    <dl>
+                        <dt><b>Thal</b> : displays the thalassemia :</dt>
+                        <dd>3 = normal</dd>
+                        <dd>6 = fixed defect</dd>
+                        <dd>7 = reversible defect</dd>
+                    </dl>
+                </li>
+                
+                <li>
+                    <dl>
+                        <dt><b>Diagnosis of heart disease</b> : Displays whether the individual is suffering from heart disease or not :</dt>
+                        <dd>0 = absence</dd>
+                        <dd>1, 2, 3, 4 = present.</dd>
+                    </dl>
+                </li>  
+                
+            </ol>
+        </section>
+    </div>
+
+    <script src="/public/js/navbarinit.js"></script>
+    <script src="/public/js/materialize.js"></script>
+</body>
+
+</html>

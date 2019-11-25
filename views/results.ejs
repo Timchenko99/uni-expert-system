@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./public/css/materialize.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/navbar.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include('blocks/navbar'); %>
+
+    <!-- Modal Structure -->
+    <% if(hasDisease == 1) { %>
+    <div id="modal1" class="modal red">
+        <div class="modal-content" style="color: white;">
+
+            <h4 class="center-align">Looks like you have some problems...</h4>
+
+            <p class="flow-text">Consider consulting with a doctor.</p>
+            <p class="flow-text">Based on the data you have provided the system has determined that you have some heart
+                problems.</p>
+            <p class="flow-text">Please remember that the information given to you is not 100% accurate.
+                If you are really want to be sure that you are healthy then try consulting with a
+                medical expert and pass a real licensed test.</p>
+            <p class="flow-text"> Further information will be given on the basis of which a decision was made regarding
+                your health</p>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-close waves-effect waves-green btn-flat">Proceed</a>
+        </div>
+    </div>
+
+    <%} else {%>
+    <div id="modal1" class="modal green accent-4">
+        <div class="modal-content" style="color: white;">
+
+            <h4 class="center-align">You are all good!</h4>
+
+            <p class="flow-text">Congratulations! </p>
+            <p class="flow-text">According to the results of the passed tests, you are completely healthy.</p>
+            <p class="flow-text">Please remember that the information given to you is not 100% accurate.
+                If you are really want to be sure that you are healthy then try consulting with a
+                medical expert and pass a real licensed test.</p>
+            <p class="flow-text"> Further information will be given on the basis of which a decision was made regarding
+                your health</p>
+
+        </div>
+        <div class="modal-footer">
+            <a class="modal-close waves-effect waves-green btn-flat">Proceed</a>
+        </div>
+    </div>
+    <% }%>
+
+    <!--
+    <div id="modal1" class="modal green accent-4">
+
+        <div class="modal-content" style="color: white;">
+
+            <h4 class="center-align">You are dead!</h4>
+
+            <h4 class="center-align">You are all good!</h4>
+
+            <p class="flow-text">Consider using professional help and using your meds if you dont have any then helo
+                yout keep me inside you and will call you by name and from now on i will keep you warm with my hands and
+                will protect you unitll you feel safe of course if you help me with my problems i`ll help you</p>
+        </div>
+        <div class="modal-footer">
+            <a class="modal-close waves-effect waves-green btn-flat">Proceed</a>
+        </div>
+    </div>
+-->
+    <!--
+    <div class="container">
+        <div class="card-panel green accent-4" style="color: white">
+            <h1 class="center-align">You are all good!</h1>
+            <p class="flow-text">Consider using professional help and using your meds if you dont have any then helo
+                yout keep me inside you and will call you by name and from now on i will keep you warm with my hands and
+                will protect you unitll you feel safe of course if you help me with my problems i`ll help you</p>
+        </div>
+        <blockquote>Don't worry if your result is positive</blockquote>
+    </div>
+-->
+    <div class="container">
+        <h1>Additional information</h1>
+
+        <div id='charts' class="row">
+
+        </div>
+    </div>
+
+    <script src="/public/js/materialize.js"></script>
+    <script src="/public/js/navbarinit.js"></script>
+    <script src="/public/js/Chart.min.js"></script>
+    <script src="/public/js/ejs.min.js"></script>
+    <script src="/public/js/results.js"></script>
+</body>
+
+</html>

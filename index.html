@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./public/css/materialize.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Document</title>
+</head>
+<style>
+    nav ul li a,
+    .nav-wrapper a {
+        color: black;
+    }
+</style>
+
+<body>
+    <nav class="white">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="/" class="brand-logo color-teal">HDES</a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+    </ul>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <h1>Heart Disease Expert System</h1>
+                <p>This expert system is created to help people check if they have some heart problems.</p>
+                <blockquote>This systems is not 100% accurate so when passing a test please keep that in mind.
+                </blockquote>
+                <p>If you have a positive result than consider consulting with a doctor and take real tests</p>
+                <blockquote>This data is based on a real researches</blockquote>
+                <p>Data Creators:</p>
+                <ol>
+                    <li> Hungarian Institute of Cardiology. Budapest: Andras Janosi, M.D.</li>
+                    <li> University Hospital, Zurich, Switzerland: William Steinbrunn, M.D.</li>
+                    <li> University Hospital, Basel, Switzerland: Matthias Pfisterer, M.D.</li>
+                    <li> V.A. Medical Center, Long Beach and Cleveland Clinic Foundation: Robert Detrano, M.D., Ph.D.
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <a href="/test" class="waves-effect waves-light btn black">Start</a>
+    </div>
+    <script src="/public/js/navbarinit.js"></script>
+    <script src="/public/js/materialize.js"></script>
+</body>
+
+</html>

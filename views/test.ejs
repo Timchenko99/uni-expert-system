@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./public/css/materialize.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Document</title>
+</head>
+
+<style>
+    #info-icon-ecd, #info-icon-st {
+        cursor: pointer;
+    }
+</style>
+
+<body>
+
+    <div id="modal-info-st" class="modal">
+        <div class="modal-content">
+            <div class="row">
+                <h3 class="center-align">Characteristics of the ST segment</h3>
+                <img class="col s12 m12 l12 center-align" src="../public/img/st_segment_2.png" alt="" width="10" height="800">
+                <p class="flow-text col s12 m12 l12">The QRS complex terminates at the J point or ST junction. The ST segment lies between the J point and the beginning of the T wave, and represents the period between the end of ventricular depolarisation and the beginning of repolarisation.</p>
+                <p class="flow-text col s12 m12 l12">The ST segment should be in the same horizontal plane as the TP segment; the J point is the point of infection between the S wave and ST segment.</p>
+                <p class="flow-text col s12 m12 l12">
+                    ST segment depression may be determined by measuring the vertical distance between the patient's trace and the isoelectric line at a location 2-3 millimeters from the QRS complex.</p>
+                <p class="flow-text col s12 m12 l12">It is often a sign of myocardial ischemia, of which coronary insufficiency is a major cause.</p>   
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="modal-footer">
+            <a class="modal-close waves-effect waves-green btn-flat">Proceed</a>
+        </div>
+    </div>
+
+    <div id="modal-info-ecd" class="modal">
+        <div class="modal-content">
+            <div class="row">
+                <h3 class="center-align">Resting electrocardiogram</h3>
+                <img class="col s12 m12 l12 center-align" src="../public/img/ecd.jpg" alt="">
+                <p class="flow-text col s12 m12 l12">Electrocardiography is the process of producing an electrocardiogram (ECG or EKG), a recording – a graph of voltage versus time – of the electrical activity of the heart using electrodes placed on the skin.</p>
+                <p class="flow-text col s12 m12 l12">For people at low risk of cardiovascular disease, the USPSTF concludes with moderate certainty that the potential harms of screening with resting or exercise ECG equal or exceed the potential benefits. For people at intermediate to high risk, current evidence is insufficient to assess the balance of benefits and harms of screening.</p>
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="modal-footer">
+            <a class="modal-close waves-effect waves-green btn-flat">Proceed</a>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <form method="post" action="/test">
+
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <h4>How old are You?</h4>
+                    <div class="input-field col s12 m6 l2">
+                        <input name="age" id="age" type="number" min="0" max="122" class="validate" required>
+                        <label for="age">Age</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <h4>Are You a male or a female?</h4>
+                    <div class="col s12 m6 l3">
+                        <p>
+                            <label>
+                                <input value="1" name="sex" type="radio" checked />
+                                <span>Male</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <input value="0" name="sex" type="radio" />
+                                <span>Female</span>
+                            </label>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <h4>Do you feel pain in the chest?</h4>
+                        <div class="input-field col s12 m6 l3">
+                            <select name="cp" required>
+                                <option value="0">I don't feel pain in the chest</option>
+                                <option value="1">Light pain</option>
+                                <option value="2">Medium pain</option>
+                                <option value="3">Hard pain</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <h4>What is Your blood pressure?</h4>
+                        <div class="input-field col s12 m6 l2">
+                            <input name="rbp" id="rbp" type="number" min="40" max="200" class="validate" required>
+                            <label for="rbp">Resting Blood Pressure</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <h4>What is Your total serum cholesterol?</h4>
+                        <div class="input-field col s12 m6 l2">
+                            <input name="tsc" id="tsc" type="number" min="40" max="600" class="validate" required>
+                            <label for="tsc">Total Serum Cholesterol</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <h4>What is Your fasting blood sugar level?</h4>
+                        <div class="col s12 m6 l2">
+                            <p>
+                                <label>
+                                    <input value="0" name="fbs" type="radio" checked />
+                                    <span>Low</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input value="1" name="fbs" type="radio" />
+                                    <span>High</span>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <h4>The resting electrocardiogram test results <sup><i class="material-icons md-dark"
+                                    id="info-icon-ecd">info</i></sup></h4>
+                        <div class="input-field col s12 m6 l3">
+                            <select name="ecg" required>
+                                <option value="0">I don't know</option>
+                                <option value="0">Low</option>
+                                <option value="1">Intermediate</option>
+                                <option value="2">High</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <h4>Max heart rate achieved</h4>
+                        <div class="input-field col s12 m6 l2">
+                            <input name="thalach" id="thalach" type="number" min="40" max="200" class="validate"
+                                required>
+                            <label for="thalach">Max heart rate achieved</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <h4>Do you feel pain in chest while doing physical exercises?</h4>
+                        <div class="input-field col s12 m6 l2">
+                            <p>
+                                <label>
+                                    <input value="1" name="exang" type="radio" checked />
+                                    <span>Yes</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input value="0" name="exang" type="radio" />
+                                    <span>No</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input value="1" name="exang" type="radio" />
+                                    <span>Sometimes</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input value="1" name="exang" type="radio" />
+                                    <span>Not sure</span>
+                                </label>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12 m12 l12">
+                        <h4>Peak exercise ST segment <sup><i class="material-icons md-dark"
+                                    id="info-icon-st">info</i></sup></h4>
+                        <div class="input-field col s12 m6 l2">
+                            <input name="oldpeak" id="oldpeak" type="text" class="validate" pattern="^\d+.\d+$"
+                                required>
+                            <label for="oldpeak">Peak exercise ST segment</label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col s12 m6 l2">
+                    <a href="/" class="waves-effect waves-light btn black">Home</a>
+                    <button type="submit" class="waves-effect waves-light btn white right"
+                        style="color: black">Submit</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <script src="/public/js/test.js"></script>
+    <script src="/public/js/materialize.js"></script>
+</body>
+
+</html>
